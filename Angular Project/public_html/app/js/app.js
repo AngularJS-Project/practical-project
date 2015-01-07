@@ -1,10 +1,23 @@
 'use strict';
-
+ 
 var app = angular.module('app', ['ngRoute', 'ngResource']);
 
-app.config(['$routeProvider', function($routeProvider){
-	$routeProvider.when('/', {
-		templateUrl: 'templates/home.html',
-		controller: 'HomeController'
-	});
- }]);
+app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');
+app.constant('pageSize', 2);
+
+app.config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/', {
+            templateUrl: 'templates/home.html',
+            controller: 'HomeController'
+        });
+
+        $routeProvider.when('/login', {
+            templateUrl: 'templates/login.html',
+            controller: 'BlankController'
+        });
+
+        $routeProvider.otherwise({
+            redirectTo: '/'
+        });
+    }
+]);

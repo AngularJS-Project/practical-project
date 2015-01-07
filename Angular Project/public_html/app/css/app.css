@@ -24,3 +24,25 @@ body {
     color: black;
     margin: 8px;
 }
+.box {
+    width: 100%;
+    display: block;
+    background: #A9D18E;
+    border: #507E32 1px solid;
+    margin: 15px 0;
+    padding: 10px;
+}
+
+.box h1 {
+    margin: 0 0 10px 0;
+    font-size: 18pt;
+    font-weight: bold;
+    color: black;
+}
+
+.box h2 {
+    margin: 0 0 10px 0;
+    font-size: 16pt;
+    font-weight: bold;
+    color: black;
+}
