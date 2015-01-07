@@ -1,0 +1,26 @@
+body {
+    font-family: 'Droid Serif', serif;
+    background-color: #E2F0D9;
+}
+
+#app-header {
+    background-color: #A9D18E;
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin: 8px;
+}
+
+#app-footer {
+    clear: both;
+    background-color: #A9D18E;
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+    font-size: 15px;
+    color: black;
+    margin: 8px;
+}
