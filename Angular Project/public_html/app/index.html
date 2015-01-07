@@ -18,7 +18,9 @@
           <div class='col-md-3 sidebar'>
               <div ng-include="'./templates/left-sidebar.html'"></div>
           </div>
+          
           <div class='col-md-6' ng-view></div>
+          
           <div class='col-md-3 sidebar'>
               <div ng-include="'./templates/right-sidebar.html'"></div>
           </div>
@@ -36,5 +38,6 @@
       <script type="text/javascript" src="lib/bootstrap/bootstrap-3.1.1.js"></script>
       <script type="text/javascript" src="js/app.js"></script>
       <script type="text/javascript" src="js/controllers/HomeController.js"></script>
+      <script src="js/services/adsService.js" type="text/javascript"></script>
   </body>
 </html>

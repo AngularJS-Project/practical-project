@@ -1,3 +1,12 @@
-<header>
-    
-</header>
+<ul class="ads">
+    <li ng-repeat="ad in ads.ads" class="box">
+        <h2>Test</h2> 
+        <div><strong>Date:</strong> {{ad.date| date:'dd-MMM-yyyy'}}</div>
+        <div ng-if='ad.imageDataUrl'>
+            <strong>Image:</strong>
+            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+        </div>
+    </li>
+</ul>
+
+<div ng-if="ads.ads.length == 0" class="box no-data">length == 0</div>
