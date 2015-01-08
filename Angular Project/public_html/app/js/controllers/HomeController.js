@@ -10,3 +10,4 @@ app.controller('HomeController', function($scope, $rootScope, adsService, pageSi
             }
     );
 });
+

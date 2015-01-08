@@ -1,12 +1,25 @@
-<ul class="ads">
-    <li ng-repeat="ad in ads.ads" class="box">
-        <h2>Test</h2> 
-        <div><strong>Date:</strong> {{ad.date| date:'dd-MMM-yyyy'}}</div>
-        <div ng-if='ad.imageDataUrl'>
-            <strong>Image:</strong>
-            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+<div ng-repeat="ad in ads.ads" class="col-xs-12 box" style="z-index: 999; margin-top: 10px;">
+    <h2 class="col-xs-9">{{ad.title}}</h2>
+    <div class="col-xs-3">{{ad.date| date:'dd-MMM-yyyy'}}</div>
+    <div class="col-xs-4 dot-box" ng-if='ad.imageDataUrl'>
+        <img style="width: 100%; height: 100%;" ng-src="{{ad.imageDataUrl}}" />
+    </div>
+    <div class="col-xs-4 dot-box" ng-if="!ad.imageDataUrl">
+        test
+    </div>
+    <div class="col-xs-8 ad-info-holder">
+        <p class="dot-box">{{ad.text}}</p>
+        <div class="col-xs-12">
+            <label class="col-xs-4 col-md-2 control-label">Name</label>
+            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerName}}</div>
         </div>
-    </li>
-</ul>
-
-<div ng-if="ads.ads.length == 0" class="box no-data">length == 0</div>
+        <div class="col-xs-12">
+            <label class="col-xs-4 col-md-2 control-label">Email</label>
+            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerEmail}}</div>
+        </div>
+        <div class="col-xs-12">
+            <label class="col-xs-4 col-md-2 control-label">Tel.</label>
+            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerPhone}}</div><br/>
+        </div>
+    </div>
+</div>
