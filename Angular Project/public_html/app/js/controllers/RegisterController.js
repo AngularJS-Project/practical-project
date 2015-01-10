@@ -1,13 +1,12 @@
-app.controller('RegisterController', ['$scope', 'towns', function($scope, townsData) {
+app.controller('RegisterController', ['$scope', 'towns', 'userData', function($scope, townsData, userData) {
 	townsData.getTowns()
 		.$promise
 		.then(function(data) {
 			$scope.towns = data;
-                        console.log(data);
 		});
                 
         $scope.register = function(user) {
-		console.log(user);
+                userData.register(user);
 	};
                 
 }]);
