@@ -24,6 +24,16 @@ app.factory('userInformation', function() {
 
 		return headers;
 	}
+        
+        function getAuthToken() {
+            var userData = getUserData();
+
+            if (userData) {
+                return 'Bearer ' + userData.access_token;
+            }
+
+            return null;
+        }
 
 	function removeUserData() {
 		localStorage.removeItem(key);
@@ -33,6 +43,7 @@ app.factory('userInformation', function() {
 		saveUser: saveUserData,
                 getUser: getUserData,
                 getHeaders: getHeaders,
-                removeUser: removeUserData
+                removeUser: removeUserData,
+                authToken: getAuthToken
 	}
 })

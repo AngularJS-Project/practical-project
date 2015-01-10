@@ -1,3 +1,4 @@
+'use strict';
 
 app.factory('towns', ['$resource', 'baseServiceUrl', function($resource, baseServiceUrl) {
 	var resource = $resource(baseServiceUrl + 'towns')
@@ -8,3 +9,6 @@ app.factory('towns', ['$resource', 'baseServiceUrl', function($resource, baseSer
 		getTowns: getAllTowns
 	};
 }])
+
+
+

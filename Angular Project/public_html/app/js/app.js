@@ -24,8 +24,13 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'LohouthController'
        });
        
-        $routeProvider.otherwise({
+       $routeProvider.when('/user/ads/publish', {
+            templateUrl: 'templates/user/push-new-ads.html',
+            controller: 'PublishNewAdController'
+       });
+       
+       $routeProvider.otherwise({
            redirectTo: '/'
-        });
+       });
     }
 ]);

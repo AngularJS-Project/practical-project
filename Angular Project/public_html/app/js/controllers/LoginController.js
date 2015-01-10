@@ -3,5 +3,6 @@ app.controller('LoginController', ['$scope', 'userData', 'userInformation',
         $scope.login = function(user) {
             userData.login(user);
         };
+        $scope.title = "Login";
     }
 ]);

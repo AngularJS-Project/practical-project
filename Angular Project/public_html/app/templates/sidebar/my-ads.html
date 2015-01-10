@@ -1,0 +1,33 @@
+<div class="col-md-12 last-column">
+    <div ng-repeat="ad in ads.ads" class="col-xs-12 box">
+        <div class="col-xs-9">
+            <h2 class="col-xs-12">{{ad.title}}</h2> <!-- GO, GO, SEO! :D -->
+            <div class="col-xs-4 text-center dot-box" ng-if='ad.imageDataUrl'>
+                <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+            </div>
+            <div class="col-xs-4 text-center dot-box" ng-if="!ad.imageDataUrl">
+                <img class="ad-image" ng-src="/images/noimage.png" />
+            </div>
+            <div class="col-xs-8 ad-info-holder">
+                <p class="dot-box">{{ad.text}}</p>
+                <div class="col-xs-12">
+                    <label class="col-xs-4 col-md-2 control-label">Category: </label>
+                    <div class="col-xs-4 col-md-10 dot-box info-box">{{ad.categoryName}}</div>
+                </div>
+                <div class="col-xs-12">
+                    <label class="col-xs-4 col-md-2 control-label">Town:</label>
+                    <div class="col-xs-4 col-md-10 dot-box info-box">{{ad.townName}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 text-center">
+            <div class="col-xs-12 text-right">{{ad.date| date:'dd-MMM-yyyy'}}</div>
+            <br /><br />
+            Status:
+            <div class="dot-box info-box">{{ad.status}}</div>
+            <br />
+            <div class="button">Deactivate</div>
+        </div>
+    </div>
+    <div ng-if="ads.ads.length == 0" class="box no-data">No ads found.</div>
+</div>

@@ -65,3 +65,6 @@ body {
     margin-left: 12px; 
     margin-right:10px;
 }
+textarea {
+    resize: none;
+}
