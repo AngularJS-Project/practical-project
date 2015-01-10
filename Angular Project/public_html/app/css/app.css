@@ -57,3 +57,11 @@ body {
     padding: 10px;
     margin-top: 5px;
 }
+.homeImg{
+    width: 100%;
+    height: 100%;
+}
+.divImgHome{
+    margin-left: 12px; 
+    margin-right:10px;
+}

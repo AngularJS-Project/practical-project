@@ -1,25 +1,29 @@
 <div ng-repeat="ad in ads.ads" class="col-xs-12 box" style="z-index: 999; margin-top: 10px;">
-    <h2 class="col-xs-9">{{ad.title}}</h2>
-    <div class="col-xs-3">{{ad.date| date:'dd-MMM-yyyy'}}</div>
-    <div class="col-xs-4 dot-box" ng-if='ad.imageDataUrl'>
-        <img style="width: 100%; height: 100%;" ng-src="{{ad.imageDataUrl}}" />
+    <div class="row">
+        <h2 class="col-xs-9">{{ad.title}}</h2>
+        <div class="col-xs-3">{{ad.date| date:'dd-MMM-yyyy'}}</div>
     </div>
-    <div class="col-xs-4 dot-box" ng-if="!ad.imageDataUrl">
-        test
-    </div>
-    <div class="col-xs-8 ad-info-holder">
-        <p class="dot-box">{{ad.text}}</p>
-        <div class="col-xs-12">
-            <label class="col-xs-4 col-md-2 control-label">Name</label>
-            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerName}}</div>
+    <div class="row">
+        <div class="col-xs-4 dot-box ng-scope divImgHome" ng-if="ad.imageDataUrl">
+            <img class="homeImg" ng-src="{{ad.imageDataUrl}}" />
         </div>
-        <div class="col-xs-12">
-            <label class="col-xs-4 col-md-2 control-label">Email</label>
-            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerEmail}}</div>
+        <div class="col-xs-4 dot-box divImgHome" ng-if="!ad.imageDataUrl">
+            <img class="homeImg" ng-src="./img/noimg.png" />
         </div>
-        <div class="col-xs-12">
-            <label class="col-xs-4 col-md-2 control-label">Tel.</label>
-            <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerPhone}}</div><br/>
+        <div class="col-xs-7 ad-info-holder">
+            <p class="dot-box">{{ad.text}}</p>
+            <div class="col-xs-12">
+                <label class="col-xs-4 col-md-2 control-label">Name</label>
+                <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerName}}</div>
+            </div>
+            <div class="col-xs-12">
+                <label class="col-xs-4 col-md-2 control-label">Email</label>
+                <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerEmail}}</div>
+            </div>
+            <div class="col-xs-12">
+                <label class="col-xs-4 col-md-2 control-label">Tel.</label>
+                <div class="col-xs-4 col-md-10 dot-box">{{ad.ownerPhone}}</div><br/>
+            </div>
         </div>
     </div>
 </div>
