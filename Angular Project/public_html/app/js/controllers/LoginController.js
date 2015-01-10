@@ -1,8 +1,7 @@
-app.controller('LoginCtrl', ['$scope', 'userData', function($scope, data) {
-   
-    $scope.pageTitle = 'Login';
-    
-    $scope.login = function (user) {
-        
+app.controller('LoginController', ['$scope', 'userData', 'userInformation',
+    function($scope, userService, userInformation) {
+        $scope.login = function(user) {
+            userData.login(user);
+        };
     }
-}]);
+]);

@@ -8,11 +8,13 @@
         <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 </head>
 <body>   
+    <header id="app-header">
+        <div>Ads - {{ title }}</div>
+    </header>
       <div id='app-content'>
           <div class='col-md-3 sidebar'>
               <div ng-include="'./templates/left-sidebar.html'"></div>
           </div>
-          
           <div class='col-md-6' ng-view></div>
           
           <div class='col-md-3 sidebar'>

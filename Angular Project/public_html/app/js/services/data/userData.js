@@ -3,20 +3,37 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'userInformation', funct
         function registerUser(user) {
             return $resource(baseServiceUrl + 'user/register')
                     .save(user)
-                    .$promise.then(function(data) {
+                    .$promise
+                    .then(function(data) {
                 userInformation.saveUser(data);
-                window.location.href = "#/login";
+                //window.location.href = "#/login";
             }, function(error) {
+                alert('error');
                 console.log(error.data.modelState);
             });
         }
-
-	function loginUser() {
-                //TODO
-	}
+        
+        function loginUser(user) {
+            return $resource(baseServiceUrl + 'user/login')
+                    .save(user)
+                    .$promise.then(function(data) {
+                userInformation.saveUser(data);
+            });
+        }
 
 	function logoutUser() {
-                //TODO
+             
+            return $resource(baseServiceUrl + 'user/logout')
+                    .save(user)
+                    .$promise
+                    .then(function(data) {
+                userInformation.removeUser(data);
+        
+            }, function(error) {
+                alert('error');
+                console.log(error.data.modelState);
+            });
+           
 	}
 
 	return {
