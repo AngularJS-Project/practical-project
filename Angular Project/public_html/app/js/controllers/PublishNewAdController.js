@@ -39,6 +39,7 @@ app.controller('PublishNewAdController', [
 
         $scope.publish = function(ad) {
             userAdsService.create(ad);
+            alert('success');
         };
     }
 ]);
