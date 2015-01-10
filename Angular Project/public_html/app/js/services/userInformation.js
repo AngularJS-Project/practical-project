@@ -12,7 +12,6 @@ app.factory('userInformation', function() {
 		//TODO
 	}
 
-
 	return {
 		saveUser: saveUserData,
                 getUser: getUserData,
