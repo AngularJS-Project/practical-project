@@ -4,13 +4,19 @@
         <div class="form-group">
             <label for="username" class="col-md-3 control-label">Username:</label>
             <div class="col-md-4">
-                <input class="form-control" id="username" placeholder="Username" type="text" ng-model="user.username">
+                <input class="form-control" id="username" placeholder="Username" type="text" ng-model="user.Username">
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-md-3 control-label">Password:</label>
             <div class="col-md-4">
-                <input class="form-control" id="password" placeholder="Password" type="password" ng-model="user.password">
+                <input class="form-control" id="password" placeholder="Password" type="password" ng-model="user.Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="passwordConfirm" class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-4">
+                <input class="form-control" id="passwordConfirm" placeholder="Confirm password" type="password" ng-model="user.confirmPassword">
             </div>
         </div>
         <div class="form-group">
@@ -26,12 +32,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="passwordConfirm" class="col-md-3 control-label">Confirm password:</label>
-            <div class="col-md-4">
-                <input class="form-control" id="passwordConfirm" placeholder="Confirm password" type="password" ng-model="user.confirmPassword">
-            </div>
-        </div>
-        <div class="form-group">
             <label for="email" class="col-md-3 control-label">Email:</label>
             <div class="col-md-4">
                 <input class="form-control" id="email" placeholder="email" type="text" ng-model="user.email">
@@ -39,8 +39,7 @@
         </div>
         <div class="form-group">
             <label for="town" class="col-md-3 control-label">Town:</label>
-            <select id="town" ng-options="town.id as town.name" ng-model="user.townId">
-            </select>
+            <select id="town" ng-options="town.id as town.name for town in towns" ng-model="user.townID"></select>
         </div>
         <div class="col-md-4"></div>
         <div class="form-group">

@@ -1,10 +1,13 @@
-
-app.controller('RegisterCtrl', ['$scope', 'userData', function($scope, data) {
-        
-    $scope.pageTitle = 'Register';    
-        
-    $scope.register = function (user) {
-        
-    }
-    
+app.controller('RegisterController', ['$scope', 'towns', function($scope, townsData) {
+	townsData.getTowns()
+		.$promise
+		.then(function(data) {
+			$scope.towns = data;
+                        console.log(data);
+		});
+                
+        $scope.register = function(user) {
+		console.log(user);
+	};
+                
 }]);
