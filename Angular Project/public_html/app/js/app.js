@@ -19,6 +19,11 @@ app.config(['$routeProvider', function($routeProvider) {
           controller: 'RegisterController'
        });
        
+       $routeProvider.when('/logout', {
+            templateUrl: 'templates/user/newad.html',
+            controller: 'LohouthController'
+       });
+       
         $routeProvider.otherwise({
            redirectTo: '/'
         });

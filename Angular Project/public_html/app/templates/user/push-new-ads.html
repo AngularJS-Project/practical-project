@@ -1,0 +1,67 @@
+<div class="col-xs-12">
+    <div id='login-box' class="box col-xs-offset-1 col-xs-10">
+        <form class="form-horizontal" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Publish New Ad</legend>
+                <div class="col-md-12 nopadding-l">
+                    <div class="col-md-8 nopadding">
+                        <div class="col-md-3 text-right">
+                            <label class="control-label fuck-bootstrap">Title</label>
+                        </div>
+                        <div class="col-md-9 fuck-bootstrap">
+                            <input class="form-control" type="text" ng-model="ad.title" required>
+                        </div>
+                        <div class="clearfix margin-b"></div>
+                        <div class="col-md-3 text-right">
+                            <label class="control-label fuck-bootstrap">Text</label>
+                        </div>
+                        <div class="col-md-9 fuck-bootstrap">
+                            <textarea class="form-control" ng-model="ad.text"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dot-box col-xs-12">
+                            asdasdsad
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-2 text-right">
+                        <label class="control-label">Image</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="file" id="image" class="form-control" ng-model="ad.image" ng-change="tobase64(this)">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-2 text-right">
+                        <label class="control-label">Category</label>
+                    </div>
+                    <div class="col-md-10">
+                        <select class="form-control" ng-options="town.id as town.name for town in towns" ng-model="ad.catId"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-2 text-right">
+                        <label class="control-label">Town</label>
+                    </div>
+                    <div class="col-md-10">
+                        <select class="form-control" ng-options="town.id as town.name for town in towns" ng-model="ad.townId"></select>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-md-offset-3">
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-success">Publish</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="reset" class="btn btn-success">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

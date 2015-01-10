@@ -13,7 +13,7 @@
     </header>
       <div id='app-content'>
           <div class='col-md-3 sidebar'>
-              <div ng-include="'./templates/left-sidebar.html'"></div>
+              <sidebar></sidebar>
           </div>
           <div class='col-md-6' ng-view></div>
           
@@ -41,5 +41,6 @@
       <script src="js/services/data/towns.js" type="text/javascript"></script>
       <script src="js/services/data/userData.js" type="text/javascript"></script>
       <script src="js/services/userInformation.js" type="text/javascript"></script>
+      <script src="js/directives/sidebar.js" type="text/javascript"></script>
   </body>
 </html>

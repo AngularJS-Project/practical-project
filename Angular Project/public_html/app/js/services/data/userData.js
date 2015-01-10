@@ -6,7 +6,8 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'userInformation', funct
                     .$promise
                     .then(function(data) {
                 userInformation.saveUser(data);
-                //window.location.href = "#/login";
+                alert('successful register');
+                window.location.href = "#/login";
             }, function(error) {
                 alert('error');
                 console.log(error.data.modelState);
@@ -18,6 +19,11 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'userInformation', funct
                     .save(user)
                     .$promise.then(function(data) {
                 userInformation.saveUser(data);
+                location.reload();
+                window.location.href = "#/home";
+            }, function(error) {
+                console.log(error);
+                alert('error');
             });
         }
 
