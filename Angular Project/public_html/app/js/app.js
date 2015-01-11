@@ -38,4 +38,22 @@ app.config(['$routeProvider', function($routeProvider) {
            redirectTo: '/'
        });
     }
+    
 ]);
+function showErrorMessage(msg) {
+    noty({
+            text: msg,
+            type: 'error',
+            layout: 'topCenter',
+            timeout: 5000}
+    );
+}
+
+function showSuccessMessage(msg) {
+    noty({
+            text: msg,
+            type: 'success',
+            layout: 'topCenter',
+            timeout: 5000}
+    );
+}

@@ -6,10 +6,11 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'userInformation', funct
                     .$promise
                     .then(function(data) {
                 userInformation.saveUser(data);
-                alert('successful register');
+                localStorage.clear();
+                showSuccessMessage('Successful Registration! Please login');
                 window.location.href = "#/login";
             }, function(error) {
-                alert('error');
+                showErrorMessage('error: ' + error.statusText);
                 console.log(error.data.modelState);
             });
         }
@@ -20,10 +21,10 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'userInformation', funct
                     .$promise.then(function(data) {
                 userInformation.saveUser(data);
                 location.reload();
+                showSuccessMessage('successful login');
                 window.location.href = "#/home";
             }, function(error) {
-                console.log(error);
-                alert('error');
+                showErrorMessage('error: ' + error.statusText);
             });
         }
 
@@ -36,8 +37,7 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'userInformation', funct
                 userInformation.removeUser(data);
         
             }, function(error) {
-                alert('error');
-                console.log(error.data.modelState);
+                showErrorMessage('error: ' + error.statusText);
             });
            
 	}

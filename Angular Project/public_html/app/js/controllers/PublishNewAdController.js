@@ -41,7 +41,8 @@ app.controller('PublishNewAdController', [
 
         $scope.publish = function(ad) {
             userAdsService.create(ad);
-            alert('success');
+            showSuccessMessage("Successful Added Ads");
+            window.location.href = "#/user/ads/myAds";
         };
     }
 ]);
