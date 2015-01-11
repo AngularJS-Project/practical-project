@@ -1,38 +1,40 @@
-              <h3>Confirm Deleting Ad?</h3>
-                <div class="row">
-                    <div class="col-md-10">
-                        Opel Vectra for Sale
-                    </div>
-                    <div class="col-md-2">
-                        12-Jan-2015
-                    </div>
+<div class="col-xs-12">
+    <div id="login-box" class="box col-xs-offset-2 col-xs-8">
+        <h3>Confirm Deleting Ad?</h3>
+        <div class="col-xs-12">
+            <div class="col-md-9"><h4>{{ad.title}}</h4></div>
+            <div class="col-md-3">{{ad.date| date:'dd-MMM-yyyy'}}</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-md-4 dot-box" ng-if='ad.imageDataUrl'>
+                <img class="homeImg" ng-src="{{ad.imageDataUrl}}" />
+            </div>
+            <div class="col-md-4 dot-box" ng-if="!ad.imageDataUrl">
+                <img class="homeImg" ng-src="./img/noimg.png" />
+            </div>
+            <div class="col-md-8 little-margin">
+                <div class="col-xs-12">
+                    <div class="col-xs-12 dot-box">{{ad.text}}</div>
                 </div>
-               <div class="row">
-                    <div class="col-md-4">
-                        <img style="width: 100%; height: 100%;" ng-src="" />
-                        img
-                    </div>
-                   <div class="col-md-8">
-                       <div class="row">
-                            <div class="col-md-11">
-                                <textarea style="background-color: white;  resize: none;" class="form-control" rows="3"> Opel Vectra, 1.8i, petrol, 2003, 4 doors,manual transmission, taxed until 15/05/2015. Price: 850 EUR.</textarea>
-                            </div>
-                        </div>
-                       <div class="row">
-                            <div class="form-group">
-                                   <label for="category" class="col-md-2 control-label">Category:</label>
-                                   <div class="col-md-9">
-                                       <input style="background-color: white; margin: 2px;" class="form-control" id="category" placeholder="category" type="text" ng-model="user.category">
-                                   </div>
-                            </div>
-                       </div>
-                       <div class="row">
-                            <div class="form-group">
-                                   <label for="town" class="col-md-2 control-label">Town:</label>
-                                   <div class="col-md-9">
-                                       <input style="background-color: white; margin: 2px;" class="form-control" id="town" placeholder="town" type="text" ng-model="user.town">
-                                   </div>
-                            </div>
-                       </div>
-                    </div>
+                <div class="col-xs-12">
+                    <label class="col-md-3 control-label">Category:</label>
+                    <div class="col-md-9 dot-box" ng-if="ad.categoryName">{{ad.categoryName}}</div>
+                    <div class="col-md-9 dot-box" ng-if="!ad.categoryName">N/A</div>
                 </div>
+                <div class="col-xs-12">
+                    <label class="col-md-3 control-label">Town:</label>
+                    <div class="col-md-9 dot-box" ng-if="ad.townName">{{ad.townName}}</div>
+                    <div class="col-md-9 dot-box" ng-if="!ad.townName">N/A</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-offset-2 col-xs-4 text-right">
+                <input type="button" value="Delete" ng-click="deleteAd()" />
+            </div>
+            <div class="col-xs-6 text-left">
+                <input type="reset" value="Cancel" ng-click="backToMyAds()" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 <div class="col-md-12 last-column" style="z-index: 999; margin-top: 10px;">
     <div ng-repeat="ad in ads.ads" class="col-xs-12 box">
         <div class="col-xs-9">
-            <h2 class="col-xs-12">{{ad.title}}</h2> <!-- GO, GO, SEO! :D -->
+            <h2 class="col-xs-12">{{ad.title}}</h2> 
             <div style="margin-right: 5px;" class="col-xs-4 text-center dot-box" ng-if='ad.imageDataUrl'>
                 <img class="homeImg" ng-src="{{ad.imageDataUrl}}" />
             </div>
@@ -27,6 +27,15 @@
             <div class="dot-box info-box">{{ad.status}}</div>
             <br />
             <div class="button">Deactivate</div>
+        </div>
+         <div ng-if="ad.status != 'Inactive'">
+                <br />
+                <input type="button" ng-click="deactivate(ad.id)" class="btn btn-success btn-center" value="Deactivate" />
+            </div>
+            <div>
+                <br />
+                <input type="button" ng-click="deleteAd(ad.id)" class="btn btn-success btn-center" value="Delete" />
+            </div>
         </div>
     </div>
     <div ng-if="ads.ads.length == 0" class="box no-data">No ads found.</div>

@@ -20,19 +20,19 @@ app.factory('userAdsService', ['$resource', 'baseServiceUrl', '$http', function(
             return adsAuthResource.get({id: id});
         }
 
-        function editAd(id, ad) {
-            return adsAuthResource.update({id: id}, ad);
-        }
-
         function deleteAd(id) {
-            return adsAuthResource.delete({id: id});
+            
+            return adsAuthResource.delete({id: id})
+                    .$promise
+                    .then(function(){ 
+                        showSuccessMessage("you are successful delete this ad!"); 
+                    });
         }
 
         return {
             getUserAds: getAllUserAds,
             create: createNewAd,
             getById: getAdById,
-            edit: editAd,
             delete: deleteAd
         };
     }

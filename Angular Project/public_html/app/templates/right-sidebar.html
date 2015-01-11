@@ -1,7 +1,7 @@
 <div class="box">
   <h2>Categories</h2>
   <ul ng-controller="CategoryControler">
-      <li ng-repeat="category in categories" ng-click="categoryClicked(category)" class="pointer"> 
+      <li ng-repeat="category in categories" ng-click="categoryClicked(category)" class="btn btn-warning riteSiteBar"> 
             {{ category.name }}
       </li>
   </ul>
@@ -10,8 +10,8 @@
 <div class="box">
   <h2>Towns</h2>
  <ul ng-controller="TownControler">
-      <li ng-repeat=" town in towns" ng-click="townClicked(town)" class="pointer" > 
+     <li class="btn btn-warning riteSiteBar" ng-repeat=" town in towns" ng-click="townClicked(town)"> 
             {{ town.name }}
       </li>
-  </ul>
+ </ul>
 </div>
