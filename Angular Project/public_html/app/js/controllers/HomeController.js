@@ -22,7 +22,11 @@ app.controller('HomeController', function($scope, adsService, userInformation, f
          location.reload();
     };
     
-    $scope.$on('categoryClicked', function(event,category){
+    $scope.$on('categoryClicked', function(event, category){
+        loadPublicAds(filter.getFilterParms());
+    });
+    
+    $scope.$on('townClicked', function(event, town){
         loadPublicAds(filter.getFilterParms());
     });
     
