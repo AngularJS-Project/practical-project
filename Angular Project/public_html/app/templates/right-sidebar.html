@@ -1,9 +1,17 @@
 <div class="box">
   <h2>Categories</h2>
- TODO
+  <ul ng-controller="CategoryControler">
+      <li ng-repeat="category in categories" ng-click="categoryClicked(category)" class="towns"> 
+            {{ category.name }}
+      </li>
+  </ul>
 </div>
 
 <div class="box">
   <h2>Towns</h2>
- TODO
+ <ul ng-controller="TownControler">
+      <li ng-repeat=" town in towns"> 
+            {{ town.name }}
+      </li>
+  </ul>
 </div>

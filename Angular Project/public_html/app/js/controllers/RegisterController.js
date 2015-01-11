@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('RegisterController', ['$scope', 'towns', 'userData', function($scope, townsData, userData) {
 	townsData.getTowns()
 		.$promise

@@ -5,7 +5,9 @@ app.controller('PublishNewAdController', [
     function($scope, categories, towns, userAdsService, userInformation, $http) {
         $http.defaults.headers.common['Authorization'] = userInformation.authToken();
 
-        categories.getAll().$promise.then(function(data) {
+        categories.getAll()
+                .$promise
+                .then(function(data) {
             $scope.categories = data;
         }, function(error) {
             console.log(error);

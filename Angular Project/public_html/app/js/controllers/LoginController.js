@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('LoginController', ['$scope', 'userData', 'userInformation',
     function($scope, userData, userInformation) {
         $scope.login = function(user) {

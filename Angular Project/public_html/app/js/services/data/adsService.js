@@ -8,8 +8,8 @@ app.factory('adsService', ['$resource', 'baseServiceUrl', function($resource, ba
         });
 
         return {
-            getAds: function(params, success, error) {
-                return adsResource.getAll(params, success, error);
+            getAds: function(filterParams, params, success, error) {
+                return adsResource.getAll(filterParams, params, success, error);
             }
         };
     }
